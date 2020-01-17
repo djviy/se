@@ -1,16 +1,53 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    title: `Разработка приложений на нейросетевых вычислениях`,
+    description: `ООО «СМАРТ системс инжиниринг» ⏤ производственно-инжиниринговая компания, реализующая потенциал и квалификацию опытных системных инженеров в разработке собственных продуктов и под заказ.`,
     author: `@gatsbyjs`,
   },
   plugins: [
+    "gatsby-plugin-emotion",
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `projects`,
+        path: `${__dirname}/projects`,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-mdx",
+      options: {
+        defaultLayouts: {
+          default: require.resolve("./src/components/layout/layout.js"),
+        },
+        gatsbyRemarkPlugins: [
+          {
+            resolve: "gatsby-remark-images",
+            options: {
+              // It's important to specify the maxWidth (in pixels) of
+              // the content container as this plugin uses this as the
+              // base for generating different widths of each image.
+              backgroundColor: "transparent",
+              linkImagesToOriginal: false,
+            },
+          },
+        ],
+      },
+    },
+
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /images/,
+        },
       },
     },
     `gatsby-transformer-sharp`,
@@ -21,10 +58,10 @@ module.exports = {
         name: `gatsby-starter-default`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#0099E5`,
+        theme_color: `#0099E5`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/icon.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

@@ -1,21 +1,64 @@
 import React from "react"
-import { Link } from "gatsby"
+//import {useState, useEffect } from "react"
+//import { Link } from "gatsby"
+import { Element } from "react-scroll"
+import styled from "@emotion/styled"
 
-import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
+import Layout from "../components/layout/layout"
+import Hero from "../components/modules/main/hero"
+import StyledParticles from "../components/modules/main/styledParticles"
+import AboutSection from "../components/modules/main/sections/aboutSection"
+import ProjectsSection from "../components/modules/main/sections/projectsSection"
+import ServicesSection from "../components/modules/main/sections/servicesSection"
+import QualifitaionSection from "../components/modules/main/sections/qualifitaionSection"
+import ContactsSection from "../components/modules/main/sections/contactsSection"
+//import Section from "../components/section/section"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.!!!</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+const Particles = styled("div")`
+  position: absolute;
+  height: 640px;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 0;
+`
+
+const IndexPage = () => {
+  // const [scrollToProjects, setScroll] = useState()
+
+  // useEffect(() => {
+  //   console.log(scrollToProjects)
+  //   if (!scrollToProjects) {
+  //     //scroll to projects
+  //   }
+  // }, [scrollToProjects])
+
+  return (
+    <>
+      <Particles>
+        <StyledParticles />
+      </Particles>
+      <Layout>
+        <SEO title="SmartSE" lang="ru" description="Разработки приложений" />
+        <Element name="main">
+          <Hero />
+        </Element>
+        <AboutSection />
+        <Element name="projects">
+          <ProjectsSection />
+        </Element>
+        <Element name="services">
+          <ServicesSection />
+        </Element>
+        <QualifitaionSection />
+        {/* <Section hideHeader={false}>Python, Matlab, C++</Section> */}
+        <Element name="contacts">
+          <ContactsSection />
+        </Element>
+      </Layout>
+    </>
+  )
+}
 
 export default IndexPage
