@@ -3,7 +3,9 @@ import { Global, css } from "@emotion/core"
 import { useTheme } from "emotion-theming"
 
 const GlobalStyles = () => {
-  const theme = useTheme()
+  const { palette } = useTheme()
+  //console.log(palette)
+
   return (
     <>
       <Global
@@ -20,17 +22,17 @@ const GlobalStyles = () => {
 
           html,
           body {
-            background-color: ${theme.palette.background.default};
+            background-color: ${palette.background.default};
             transition: background-color 0.2s ease-in-out;
             margin: 0;
-            color: ${theme.palette.text.secondary};
+            color: ${palette.text.secondary};
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
               Helvetica, Arial, sans-serif, "Apple Color Emoji",
               "Segoe UI Emoji", "Segoe UI Symbol";
             font-size: 16px;
             line-height: 1.4;
 
-            @media (min-width: calc(550px + 10vw)) {
+            @media (max-width: 420px) {
               font-size: 18px;
             }
 
@@ -46,10 +48,32 @@ const GlobalStyles = () => {
             }
           }
           h2 {
+            font-weight: 500;
             font-size: 48px;
+            @media (max-width: 420px) {
+              font-size: 32px;
+            }
+          }
+          h3 {
+            font-size: 28px;
+            @media (max-width: 420px) {
+              font-size: 24px;
+            }
+          }
+          h4 {
+            font-weight: 400;
+            font-size: 24px;
+            @media (max-width: 420px) {
+              font-size: 20px;
+            }
           }
           h5 {
-            font-size: 24px;
+            max-width: 600px;
+            font-weight: 600;
+            font-size: 18px;
+            @media (max-width: 420px) {
+              font-size: 20px;
+            }
           }
           h1,
           h2,
@@ -57,8 +81,9 @@ const GlobalStyles = () => {
           h4,
           h5,
           h6 {
-            color: ${theme.palette.text.primary};
+            color: ${palette.text.primary};
             line-height: 1.1;
+            margin-bottom: 1rem;
 
             + * {
               margin-top: 0.5rem;
@@ -66,7 +91,7 @@ const GlobalStyles = () => {
           }
 
           strong {
-            color: #222;
+            color: ${palette.text.primary};
           }
 
           li {

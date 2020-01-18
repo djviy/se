@@ -8,7 +8,7 @@ export const theme = {
       disabled: "rgba(0, 0, 0, 0.26)",
     },
     background: {
-      paper: "#fff",
+      paper: "#F5F5F5",
       default: "#fff",
       level2: "#f5f5f5",
       level1: "#fff",
@@ -44,7 +44,7 @@ export const theme = {
       contrastText: "#fff",
     },
     primary: {
-      main: "#1976d2",
+      main: "#0099E5",
       light: "rgb(71, 145, 219)",
       dark: "rgb(17, 82, 147)",
       contrastText: "#fff",

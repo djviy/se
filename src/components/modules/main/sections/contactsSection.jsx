@@ -1,19 +1,21 @@
 import React from "react"
 
+import { useTheme } from "emotion-theming"
 import Section from "../../../section/section"
 import List from "../../../list/list"
 
-const ContactsSection = props => {
+const ContactsSection = () => {
+  const { palette } = useTheme()
   return (
-    <Section title="Контакты">
+    <Section title="Контакты" bg={palette.background.paper}>
       <List type="contacts" />
-      <iframe
+      {/* <iframe
         src="https://yandex.ru/map-widget/v1/?um=constructor%3A9092f8ed37e0ac1e9f8fa824013b4aadc18c5568ef8af47f27e6f94bca2c7764&source=constructor"
         title="map"
         width="100%"
         height={400}
         frameBorder={0}
-      />
+      /> */}
     </Section>
   )
 }

@@ -7,18 +7,18 @@ import ImageHero from "./image-hero"
 const HeroContent = styled("div")`
   text-align: center;
   z-index: 2;
-  & > h5 {
+  & > h4 {
     color: ${({ theme }) => theme.palette.text.secondary};
   }
 `
 
-const Hero = props => {
+const Hero = () => {
   return (
     <section>
       <Container>
         <HeroContent>
           <h1>Разработка приложений на нейросетевых вычислениях</h1>
-          <h5>под десктопные и мобильные платформы</h5>
+          <h4>под десктопные и мобильные платформы</h4>
           <ImageHero />
         </HeroContent>
       </Container>

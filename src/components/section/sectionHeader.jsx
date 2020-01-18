@@ -7,7 +7,7 @@ const SectionHeader = ({ children, hide }) => {
     <div style={{ marginBottom: "2rem" }}>
       {hide && (
         <>
-          <h2>{children}</h2>
+          <h2 style={{ marginBottom: "1rem" }}>{children}</h2>
           <HeaderDivider />
         </>
       )}

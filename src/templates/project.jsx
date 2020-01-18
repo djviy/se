@@ -11,6 +11,7 @@ export const query = graphql`
     mdx(frontmatter: { slug: { eq: $slug } }) {
       frontmatter {
         title
+        description
       }
       body
     }
@@ -22,7 +23,7 @@ const PostTemplate = ({ data: { mdx: post } }) => (
     <SEO
       title={post.frontmatter.title}
       lang="ru"
-      description="Разработки приложений"
+      description={post.frontmatter.description}
     />
     <Container>
       <h1>{post.frontmatter.title}</h1>

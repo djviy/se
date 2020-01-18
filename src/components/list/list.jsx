@@ -29,7 +29,9 @@ const listContent = (type, items) => {
       return items.map((item, index) => {
         return (
           <li key={index}>
-            <Icons />
+            <div>
+              <Icons />
+            </div>
             <p>{item}</p>
           </li>
         )

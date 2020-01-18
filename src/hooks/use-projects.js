@@ -8,6 +8,7 @@ const useProjects = () => {
           frontmatter {
             title
             slug
+            description
             image {
               sharp: childImageSharp {
                 fluid(maxWidth: 600, maxHeight: 320) {
@@ -16,17 +17,17 @@ const useProjects = () => {
               }
             }
           }
-          excerpt
+          # excerpt
         }
       }
     }
   `)
 
-  return data.allMdx.nodes.map(({ frontmatter, excerpt }) => ({
+  return data.allMdx.nodes.map(({ frontmatter }) => ({
     title: frontmatter.title,
     slug: frontmatter.slug,
+    description: frontmatter.description,
     image: frontmatter.image,
-    excerpt: excerpt,
   }))
 }
 

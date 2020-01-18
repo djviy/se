@@ -40,7 +40,11 @@ const IndexPage = () => {
         <StyledParticles />
       </Particles>
       <Layout>
-        <SEO title="SmartSE" lang="ru" description="Разработки приложений" />
+        <SEO
+          title="SmartSE"
+          lang="ru"
+          description="Разработка приложений на нейросетевых вычислениях"
+        />
         <Element name="main">
           <Hero />
         </Element>

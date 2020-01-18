@@ -11,12 +11,12 @@ const ProjectsSection = props => {
   return (
     <div>
       <Section title="Проекты">
-        {projects.map(({ title, excerpt, slug, image, id }) => {
+        {projects.map(({ title, slug, image, description }) => {
           return (
             <Project
               key={slug}
               title={title}
-              description={excerpt}
+              description={description}
               link={slug}
               image={image}
             />
